@@ -1,0 +1,157 @@
+@import url("../fonts/Nekst-black/style.css")
+@import url("../fonts/Gilroy/style.css")
+@mixin fontNekst
+	font: 54px "Nekst"
+	line-height: 90%
+	
+@mixin Gilroy
+	font: 16px "Gilroy"
+	color: #575757
+
+@mixin inputs
+	position: absolute
+	width: 427px
+	height: 119px
+	top: 343px 
+	margin-top: 32px 
+
+@mixin total
+	position: absolute
+	height: 81px
+	top: 506px
+	width: 279px
+
+.appForm
+	width: 1440px
+	height: 800px
+
+.appHeader
+	position: absolute
+	width: 753px
+	height: 98px
+	left:47px
+	top: 213px
+	@include fontNekst
+	
+.carPrice
+	@include inputs
+	left: 47px
+
+.lastSymbolCarPrice
+	position: absolute
+	left: 360px
+	top: 57px
+
+	font: 30px "Nekst" 
+	padding-left:24px
+	color: #575757
+
+.lastSymbolInitialPayment
+	position: absolute
+	padding: 15px 17px
+	right: 11px
+	top: 52px
+	border-radius: 16px
+	background: #EBEBEC
+
+	max-width: 69px
+	max-height: 54px
+	font: 18px "Nekst" 
+	color: #575757
+
+.lastSymbolLeaseTerm
+	position: absolute
+	height: 36px
+	right: 24px
+	top: 60px
+	font: 30px "Nekst" 
+	line-height: 36px
+	color: #575757
+
+.initialPayment
+	@include inputs
+	left: 506px
+
+.leaseTerm
+	@include inputs
+	left: 965px
+
+.title
+	position: absolute
+	min-width: 177px
+	left: 0%
+	right: 59.25%
+	top: 0%
+	bottom: 83.19%
+	@include Gilroy
+
+.input
+	position: absolute
+	left: 0%
+	right: 0%
+	top: 36.97%
+	bottom: 5.88%
+	border: none
+	border-radius: 16px
+	background: #F3F3F4
+
+	font: 30px "Nekst" 
+	padding-left:24px
+	color: #575757
+	&:focus
+		outline: 0
+		border: 2px solid #F3F3F4
+		background: white
+
+.totalCost
+	left: 47px
+	@include total
+	div
+		@include Gilroy
+	.total
+		width: 279px
+		height: 49px
+		display: flex
+		align-content: center
+
+.monthlyPayment
+	left: 506px
+	@include total
+	div
+		@include Gilroy
+	.total
+		width: 279px
+		height: 49px
+		display: flex
+		align-content: center
+	
+h1
+	margin-top: 0px
+	@include fontNekst
+	color: #575757
+
+.lastSymbolTotal
+	margin-top: -5.5px
+
+
+.button
+	position: absolute
+	width: 426px
+	height: 68px
+	left: 965px
+	top: 516px
+
+	margin-top: 32px 
+	font: 30pt "Nekst"
+	line-height: 36px
+	color: white
+
+	border: none
+	background: #FF9514
+	border-radius: 40px
+
+	&:hover
+		background: #111111
+	&:active
+		background: #575757
+		
