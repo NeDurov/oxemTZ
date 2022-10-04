@@ -20,7 +20,6 @@
   width: 427px;
   height: 119px;
   top: 343px;
-  margin-top: 32px;
   left: 47px;
 }
 
@@ -56,12 +55,18 @@
   color: #575757;
 }
 
+.slider {
+  position: absolute;
+  left: 17px;
+  right: 92px;
+  top: 99px;
+}
+
 .initialPayment {
   position: absolute;
   width: 427px;
   height: 119px;
   top: 343px;
-  margin-top: 32px;
   left: 506px;
 }
 
@@ -70,7 +75,6 @@
   width: 427px;
   height: 119px;
   top: 343px;
-  margin-top: 32px;
   left: 965px;
 }
 
@@ -116,6 +120,7 @@
   color: #575757;
 }
 .totalCost .total {
+  margin-top: 8px;
   width: 279px;
   height: 49px;
   display: flex;
@@ -157,7 +162,6 @@ h1 {
   height: 68px;
   left: 965px;
   top: 516px;
-  margin-top: 32px;
   font: 30pt "Nekst";
   line-height: 36px;
   color: white;
