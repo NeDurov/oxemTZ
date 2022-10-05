@@ -32,6 +32,14 @@
   color: #575757;
 }
 
+.initialPayment {
+  position: absolute;
+  width: 427px;
+  height: 119px;
+  top: 343px;
+  left: 486px;
+}
+
 .lastSymbolInitialPayment {
   position: absolute;
   padding: 15px 17px;
@@ -43,6 +51,14 @@
   max-height: 54px;
   font: 18px "Nekst";
   color: #575757;
+}
+
+.leaseTerm {
+  position: absolute;
+  width: 427px;
+  height: 119px;
+  top: 343px;
+  left: 925px;
 }
 
 .lastSymbolLeaseTerm {
@@ -60,22 +76,6 @@
   left: 17px;
   right: 92px;
   top: 99px;
-}
-
-.initialPayment {
-  position: absolute;
-  width: 427px;
-  height: 119px;
-  top: 343px;
-  left: 506px;
-}
-
-.leaseTerm {
-  position: absolute;
-  width: 427px;
-  height: 119px;
-  top: 343px;
-  left: 965px;
 }
 
 .title {
@@ -128,7 +128,7 @@
 }
 
 .monthlyPayment {
-  left: 506px;
+  left: 486px;
   position: absolute;
   height: 81px;
   top: 506px;
@@ -160,7 +160,7 @@ h1 {
   position: absolute;
   width: 426px;
   height: 68px;
-  left: 965px;
+  left: 925px;
   top: 516px;
   font: 30pt "Nekst";
   line-height: 36px;
@@ -174,4 +174,7 @@ h1 {
 }
 .button:active {
   background: #575757;
+}
+.button:disabled {
+  background: #FF9514;
 }/*# sourceMappingURL=App.css.map */

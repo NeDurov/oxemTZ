@@ -1,5 +1,6 @@
 @import url("../fonts/Nekst-black/style.css")
 @import url("../fonts/Gilroy/style.css")
+
 @mixin fontNekst
 	font: 54px "Nekst"
 	line-height: 90%
@@ -45,6 +46,10 @@
 	padding-left:24px
 	color: #575757
 
+.initialPayment
+	@include inputs
+	left: 486px
+
 .lastSymbolInitialPayment
 	position: absolute
 	padding: 15px 17px
@@ -57,6 +62,10 @@
 	max-height: 54px
 	font: 18px "Nekst" 
 	color: #575757
+
+.leaseTerm
+	@include inputs
+	left: 925px
 
 .lastSymbolLeaseTerm
 	position: absolute
@@ -72,14 +81,6 @@
 	left: 17px
 	right: 92px
 	top: 99px
-
-.initialPayment
-	@include inputs
-	left: 506px
-
-.leaseTerm
-	@include inputs
-	left: 965px
 
 .title
 	position: absolute
@@ -121,7 +122,7 @@
 		align-content: center
 
 .monthlyPayment
-	left: 506px
+	left: 486px
 	@include total
 	div
 		@include Gilroy
@@ -139,12 +140,11 @@ h1
 .lastSymbolTotal
 	margin-top: -5.5px
 
-
 .button
 	position: absolute
 	width: 426px
 	height: 68px
-	left: 965px
+	left: 925px
 	top: 516px
 
 	font: 30pt "Nekst"
@@ -159,4 +159,6 @@ h1
 		background: #111111
 	&:active
 		background: #575757
+	&:disabled
+		background: #FF9514
 		

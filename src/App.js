@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { createTheme } from "@mui/material/styles";
 import Slider from "@mui/material/Slider";
+import CircularProgress from "@mui/material/CircularProgress";
+import axios from "axios";
 import "./sass/App.css";
 
 function App() {
+	const [loading, setLoading] = useState(false);
 	const [update, setUpdate] = useState(false);
 	const [carPrice, setCarPrice] = useState();
 	const [initialPayment, setInitialPayment] = useState();
@@ -15,18 +18,17 @@ function App() {
 		setCarPrice(3300000);
 		setInitialPayment(13);
 		setLeaseTerm(60);
-		setTotalCost("4 467 313");
 	}, []);
 
 	useEffect(() => {
+		changeMonthlyPayment(carPrice, initialPayment, leaseTerm);
+		changeTotalCost(initialPayment, leaseTerm, monthlyPayment);
 		document.getElementById("carPrice").value = normalizeString(carPrice);
 		document.getElementById("initialPayment").value = Math.floor(
 			(initialPayment / 100) * carPrice
 		);
 		document.getElementById("procent").innerHTML = initialPayment + "%";
 		document.getElementById("leaseTerm").value = leaseTerm;
-		changeMonthlyPayment(carPrice, initialPayment, leaseTerm);
-		changeTotalCost(initialPayment, leaseTerm, monthlyPayment);
 
 		document.getElementById("monthlyPayment").innerHTML = monthlyPayment;
 		document.getElementById("totalCost").innerHTML = totalCost;
@@ -107,12 +109,43 @@ function App() {
 		palette: {
 			primary: {
 				main: "#FF9514",
+				white: "#fff",
 			},
 		},
 	});
 
+	const sendData = (e) => {
+		// axios
+		// 	.post(
+		// 		"https://hookb.in/eK160jgYJ6UlaRPldJ1P",
+		// 		{
+		// 			car_coast: carPrice,
+		// 			initial_payment: (initialPayment / 100) * carPrice,
+		// 			initial_payment_percent: initialPayment,
+		// 			lease_term: leaseTerm,
+		// 			total_sum: totalCost,
+		// 			monthly_payment_from: monthlyPayment,
+		// 		},
+		// 		{ headers: { "Content-Type": "application/json" } }
+		// 	)
+		// 	.then((res) => {
+		// 		console.log(res.data);
+		// 	});
+		e.preventDefault();
+		setLoading(true);
+		document.getElementById("carPrice").disabled = true;
+		document.getElementById("initialPayment").disabled = true;
+		document.getElementById("leaseTerm").disabled = true;
+
+		setTimeout(() => {
+			setLoading(false);
+			document.getElementById("carPrice").disabled = false;
+			document.getElementById("initialPayment").disabled = false;
+			document.getElementById("leaseTerm").disabled = false;
+		}, 7000);
+	};
 	return (
-		<form className="appForm">
+		<form className="appForm" onSubmit={sendData}>
 			<div className="appHeader">
 				Рассчитайте стоимость автомобиля в лизинг
 			</div>
@@ -123,16 +156,31 @@ function App() {
 					type="text"
 					onBlur={changePriceInput}
 					className="input"
+					style={{
+						opacity: !loading ? 1 : 0.5,
+					}}
 				></input>
-				<span className="lastSymbolCarPrice">&#8381;</span>
+				<span
+					className="lastSymbolCarPrice"
+					style={{
+						opacity: !loading ? 1 : 0.5,
+					}}
+				>
+					&#8381;
+				</span>
 				<Slider
 					className="slider"
 					size="small"
 					value={Math.floor((carPrice - 1000000) * 100) / 5000000}
 					onChange={changePrice}
-					sx={{ width: 390, color: theme.palette.primary.main }}
+					sx={{
+						width: 390,
+						color: theme.palette.primary.main,
+						opacity: !loading ? 1 : 0.5,
+					}}
 				/>
 			</label>
+
 			<label className="initialPayment">
 				<div className="title">Первоначальный взнос</div>
 				<input
@@ -140,8 +188,17 @@ function App() {
 					type="text"
 					onBlur={changeInitialPaymentInput}
 					className="input"
+					style={{
+						opacity: !loading ? 1 : 0.5,
+					}}
 				></input>
-				<div id="procent" className="lastSymbolInitialPayment">
+				<div
+					id="procent"
+					className="lastSymbolInitialPayment"
+					style={{
+						opacity: !loading ? 1 : 0.5,
+					}}
+				>
 					13%
 				</div>
 				<Slider
@@ -149,7 +206,11 @@ function App() {
 					size="small"
 					value={Math.floor((initialPayment - 10) * 100) / 50}
 					onChange={changeInitialPayment}
-					sx={{ width: 390, color: theme.palette.primary.main }}
+					sx={{
+						width: 390,
+						color: theme.palette.primary.main,
+						opacity: !loading ? 1 : 0.5,
+					}}
 				/>
 			</label>
 
@@ -160,14 +221,28 @@ function App() {
 					type="text"
 					onBlur={changeLeaseTermInput}
 					className="input"
+					style={{
+						opacity: !loading ? 1 : 0.5,
+					}}
 				></input>
-				<div className="lastSymbolLeaseTerm">мес.</div>
+				<div
+					className="lastSymbolLeaseTerm"
+					style={{
+						opacity: !loading ? 1 : 0.5,
+					}}
+				>
+					мес.
+				</div>
 				<Slider
 					className="slider"
 					size="small"
 					value={Math.floor((leaseTerm - 1) * 100) / 59}
 					onChange={changeLeaseTerm}
-					sx={{ width: 390, color: theme.palette.primary.main }}
+					sx={{
+						width: 390,
+						color: theme.palette.primary.main,
+						opacity: !loading ? 1 : 0.5,
+					}}
 				/>
 			</label>
 
@@ -186,7 +261,22 @@ function App() {
 					<h1 className="lastSymbolTotal"> &#8381;</h1>
 				</div>
 			</div>
-			<input className="button" type="submit" value="Оставить заявку" />
+			<button
+				className="button"
+				type="submit"
+				disabled={loading}
+				style={{
+					opacity: !loading ? 1 : 0.5,
+				}}
+			>
+				{!loading ? (
+					"Оставить заявку"
+				) : (
+					<CircularProgress
+						sx={{ color: theme.palette.primary.white }}
+					/>
+				)}
+			</button>
 		</form>
 	);
 }
