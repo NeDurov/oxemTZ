@@ -18,78 +18,232 @@
 @mixin total
 	position: absolute
 	height: 81px
-	top: 506px
 	width: 279px
+	top: 506px
 
 .appForm
-	width: 1440px
-	height: 800px
+	@media screen and ( min-width: 1440px )
+		width: 1440px
+		height: 800px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		width: 1024px
+		height: 1013px
+	
 
 .appHeader
 	position: absolute
 	width: 753px
 	height: 98px
-	left:47px
-	top: 213px
 	@include fontNekst
+	@media screen and ( min-width: 1440px )
+		left:47px
+		top: 213px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		left: 48px
+		top: 100px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		left: 36px
+		top: 64px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 279px
+		height: 124px
+		left: 21px
+		top: 44px
+		font-size: 34px
 	
 .carPrice
 	@include inputs
-	left: 47px
+	@media screen and ( min-width: 1440px )
+		left: 47px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		width: 928px
+		height: 119px
+		left: 48px
+		top: 242px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		width: 696px
+		height: 119px
+		left: 36px
+		top: 206px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 280px
+		height: 96px
+		left: 20px
+		top: 200px
+	
+	
 
 .lastSymbolCarPrice
 	position: absolute
-	left: 360px
-	top: 57px
-
-	font: 30px "Nekst" 
-	padding-left:24px
+	font: 30px "Nekst"
 	color: #575757
+	@media screen and ( min-width: 1440px )
+		left: 360px
+		top: 57px
+		padding-left:24px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		left: 884px
+		top: 55px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		left: 652px
+		top: 57px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		left: 245px
+		top: 43px
+
+		font-size: 22px
+		color: #333E48
+
+
+	
 
 .initialPayment
 	@include inputs
-	left: 486px
+	@media screen and ( min-width: 1440px )
+		left: 486px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		width: 928px
+		left: 48px
+		top: 393px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		width: 696px
+		left: 36px
+		top: 357px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 280px
+		height: 96px
+		left: 20px
+		top: 312px
+
+
+	
 
 .lastSymbolInitialPayment
 	position: absolute
-	padding: 15px 17px
-	right: 11px
-	top: 52px
 	border-radius: 16px
 	background: #EBEBEC
 
-	max-width: 69px
-	max-height: 54px
 	font: 18px "Nekst" 
 	color: #575757
 
+	@media screen and ( min-width: 1440px )
+		padding: 15px 17px
+		right: 11px
+		top: 52px
+
+		max-width: 69px
+		max-height: 54px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		padding: 15px 17px
+
+		max-width: 70px
+		max-height: 54px
+		left: 850px
+		top: 52px
+
+		font-size: 20px
+
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		padding: 15px 17px
+
+		max-width: 70px
+		max-height: 54px
+		left: 616px
+		top: 51px
+
+		font-size: 20px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		padding: 10px
+		
+		max-width: 65px
+		max-height: 40px
+		left: 214px
+		top: 34px
+
+		border-radius: 12px
+
+		font-size: 22px
+		color: #333E48
+	
 .leaseTerm
 	@include inputs
-	left: 925px
+	@media screen and ( min-width: 1440px )
+		left: 925px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		width: 928px
+		left: 48px
+		top: 544px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		width: 696px
+		left: 36px
+		top: 508px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 280px
+		height: 96px
+		left: 20px
+		top: 424px
 
 .lastSymbolLeaseTerm
 	position: absolute
-	height: 36px
-	right: 24px
-	top: 60px
 	font: 30px "Nekst" 
 	line-height: 36px
 	color: #575757
+	height: 36px
+	right: 24px
+	top: 60px
+	@media screen and ( min-width: 1440px )
+		// left: 340px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		// left: 841px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		// left: 544px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 47px
+		left: 213px
+		top: 38px
+		font-size: 22px
+		color: #333E48
+
+
+	
 
 .slider
 	position: absolute
 	left: 17px
 	right: 92px
-	top: 99px
+	top: 93px
+	@media screen and ( min-width: 1440px )
+		max-width: 390px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		max-width: 900px
+
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		max-width: 660px
+
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		max-width: 240px
+		top: 68px
+	
 
 .title
 	position: absolute
 	min-width: 177px
 	left: 0%
-	right: 59.25%
 	top: 0%
 	bottom: 83.19%
 	@include Gilroy
+	@media screen and ( min-width: 1440px )
+		right: 59.25%
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		right: 81.25
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		right: 75%
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		right: 0%
+
+		font-size: 14px
+		color: #333E48
+	
 
 .input
 	position: absolute
@@ -97,6 +251,7 @@
 	right: 0%
 	top: 36.97%
 	bottom: 5.88%
+
 	border: none
 	border-radius: 16px
 	background: #F3F3F4
@@ -105,12 +260,21 @@
 	padding-left:24px
 	color: #575757
 	&:focus
-		outline: 0
-		border: 2px solid #F3F3F4
-		background: white
+			outline: 0
+			border: 2px solid #F3F3F4
+			background: white
+	@media screen and ( min-width: 1440px )
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		max-width: 280px
+		max-height: 60px
+		font-size: 22px
+		top: 28.12%
+		bottom: 9.38%
+		
 
 .totalCost
-	left: 47px
 	@include total
 	div
 		@include Gilroy
@@ -120,32 +284,83 @@
 		height: 49px
 		display: flex
 		align-content: center
+	@media screen and ( min-width: 1440px )
+		left: 47px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		left: 48px
+		top: 700px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		left: 36px
+		top: 664px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 167px
+		height: 41px
+		left: 20px
+		top: 536px
+		div
+			font-size: 14px
+		
 
 .monthlyPayment
-	left: 486px
 	@include total
 	div
 		@include Gilroy
 	.total
+		margin-top:8px 
 		width: 279px
 		height: 49px
 		display: flex
 		align-content: center
+	@media screen and ( min-width: 1440px )
+		left: 486px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		width: 229px
+		left: 528px
+		top: 700px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		width: 229px
+		left: 400px
+		top: 664px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 158px
+		height: 41px
+		left: 20px
+		top: 606px
+		div
+			font-size: 14px
+
+		
 	
 h1
 	margin-top: 0px
 	@include fontNekst
 	color: #575757
+	@media screen and ( min-width: 1440px )
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		font-size: 22px
+		color: #333333
+	
 
 .lastSymbolTotal
 	margin-top: -5.5px
+	@media screen and ( min-width: 1440px )
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		margin-left: 10px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		margin-left: 10px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		margin-left: 5px
+		margin-top: -2px
+
+	
 
 .button
 	position: absolute
-	width: 426px
 	height: 68px
-	left: 925px
-	top: 516px
+	width: 426px
+
 
 	font: 30pt "Nekst"
 	line-height: 36px
@@ -154,11 +369,30 @@ h1
 	border: none
 	background: #FF9514
 	border-radius: 40px
-
 	&:hover
 		background: #111111
 	&:active
 		background: #575757
 	&:disabled
 		background: #FF9514
+	@media screen and ( min-width: 1440px )
+		max-width: 426px
+		left: 925px
+		top: 516px
+	@media screen and ( min-width: 1120px ) and ( max-width: 1439px )
+		width: 345px
+		left: 48px
+		top: 825px
+	@media screen and ( min-width: 768px ) and ( max-width: 1119px )
+		width: 345px
+		left: 36px
+		right: 387px
+		top: 789px
+		bottom: 156px
+	@media screen and ( min-width: 320px ) and ( max-width: 767px )
+		width: 280px
+		height: 60px
+		left: 20px
+		top: 679px
 		
+		font-size: 22px

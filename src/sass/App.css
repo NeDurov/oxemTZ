@@ -1,18 +1,51 @@
 @import url("../fonts/Nekst-black/style.css");
 @import url("../fonts/Gilroy/style.css");
-.appForm {
-  width: 1440px;
-  height: 800px;
+@media screen and (min-width: 1440px) {
+  .appForm {
+    width: 1440px;
+    height: 800px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .appForm {
+    width: 1024px;
+    height: 1013px;
+  }
 }
 
 .appHeader {
   position: absolute;
   width: 753px;
   height: 98px;
-  left: 47px;
-  top: 213px;
   font: 54px "Nekst";
   line-height: 90%;
+}
+@media screen and (min-width: 1440px) {
+  .appHeader {
+    left: 47px;
+    top: 213px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .appHeader {
+    left: 48px;
+    top: 100px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .appHeader {
+    left: 36px;
+    top: 64px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .appHeader {
+    width: 279px;
+    height: 124px;
+    left: 21px;
+    top: 44px;
+    font-size: 34px;
+  }
 }
 
 .carPrice {
@@ -20,16 +53,68 @@
   width: 427px;
   height: 119px;
   top: 343px;
-  left: 47px;
+}
+@media screen and (min-width: 1440px) {
+  .carPrice {
+    left: 47px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .carPrice {
+    width: 928px;
+    height: 119px;
+    left: 48px;
+    top: 242px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .carPrice {
+    width: 696px;
+    height: 119px;
+    left: 36px;
+    top: 206px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .carPrice {
+    width: 280px;
+    height: 96px;
+    left: 20px;
+    top: 200px;
+  }
 }
 
 .lastSymbolCarPrice {
   position: absolute;
-  left: 360px;
-  top: 57px;
   font: 30px "Nekst";
-  padding-left: 24px;
   color: #575757;
+}
+@media screen and (min-width: 1440px) {
+  .lastSymbolCarPrice {
+    left: 360px;
+    top: 57px;
+    padding-left: 24px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .lastSymbolCarPrice {
+    left: 884px;
+    top: 55px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .lastSymbolCarPrice {
+    left: 652px;
+    top: 57px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .lastSymbolCarPrice {
+    left: 245px;
+    top: 43px;
+    font-size: 22px;
+    color: #333E48;
+  }
 }
 
 .initialPayment {
@@ -37,20 +122,82 @@
   width: 427px;
   height: 119px;
   top: 343px;
-  left: 486px;
+}
+@media screen and (min-width: 1440px) {
+  .initialPayment {
+    left: 486px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .initialPayment {
+    width: 928px;
+    left: 48px;
+    top: 393px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .initialPayment {
+    width: 696px;
+    left: 36px;
+    top: 357px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .initialPayment {
+    width: 280px;
+    height: 96px;
+    left: 20px;
+    top: 312px;
+  }
 }
 
 .lastSymbolInitialPayment {
   position: absolute;
-  padding: 15px 17px;
-  right: 11px;
-  top: 52px;
   border-radius: 16px;
   background: #EBEBEC;
-  max-width: 69px;
-  max-height: 54px;
   font: 18px "Nekst";
   color: #575757;
+}
+@media screen and (min-width: 1440px) {
+  .lastSymbolInitialPayment {
+    padding: 15px 17px;
+    right: 11px;
+    top: 52px;
+    max-width: 69px;
+    max-height: 54px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .lastSymbolInitialPayment {
+    padding: 15px 17px;
+    max-width: 70px;
+    max-height: 54px;
+    left: 850px;
+    top: 52px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .lastSymbolInitialPayment {
+    padding: 15px 17px;
+    max-width: 70px;
+    max-height: 54px;
+    left: 616px;
+    top: 51px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .lastSymbolInitialPayment {
+    padding: 10px;
+    max-width: 65px;
+    max-height: 40px;
+    left: 214px;
+    top: 34px;
+    border-radius: 12px;
+    font-size: 22px;
+    color: #333E48;
+  }
 }
 
 .leaseTerm {
@@ -58,35 +205,112 @@
   width: 427px;
   height: 119px;
   top: 343px;
-  left: 925px;
+}
+@media screen and (min-width: 1440px) {
+  .leaseTerm {
+    left: 925px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .leaseTerm {
+    width: 928px;
+    left: 48px;
+    top: 544px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .leaseTerm {
+    width: 696px;
+    left: 36px;
+    top: 508px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .leaseTerm {
+    width: 280px;
+    height: 96px;
+    left: 20px;
+    top: 424px;
+  }
 }
 
 .lastSymbolLeaseTerm {
   position: absolute;
-  height: 36px;
-  right: 24px;
-  top: 60px;
   font: 30px "Nekst";
   line-height: 36px;
   color: #575757;
+  height: 36px;
+  right: 24px;
+  top: 60px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .lastSymbolLeaseTerm {
+    width: 47px;
+    left: 213px;
+    top: 38px;
+    font-size: 22px;
+    color: #333E48;
+  }
 }
 
 .slider {
   position: absolute;
   left: 17px;
   right: 92px;
-  top: 99px;
+  top: 93px;
+}
+@media screen and (min-width: 1440px) {
+  .slider {
+    max-width: 390px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .slider {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .slider {
+    max-width: 660px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .slider {
+    max-width: 240px;
+    top: 68px;
+  }
 }
 
 .title {
   position: absolute;
   min-width: 177px;
   left: 0%;
-  right: 59.25%;
   top: 0%;
   bottom: 83.19%;
   font: 16px "Gilroy";
   color: #575757;
+}
+@media screen and (min-width: 1440px) {
+  .title {
+    right: 59.25%;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .title {
+    right: 81.25;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .title {
+    right: 75%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .title {
+    right: 0%;
+    font-size: 14px;
+    color: #333E48;
+  }
 }
 
 .input {
@@ -107,13 +331,21 @@
   border: 2px solid #F3F3F4;
   background: white;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .input {
+    max-width: 280px;
+    max-height: 60px;
+    font-size: 22px;
+    top: 28.12%;
+    bottom: 9.38%;
+  }
+}
 
 .totalCost {
-  left: 47px;
   position: absolute;
   height: 81px;
-  top: 506px;
   width: 279px;
+  top: 506px;
 }
 .totalCost div {
   font: 16px "Gilroy";
@@ -126,23 +358,81 @@
   display: flex;
   align-content: center;
 }
+@media screen and (min-width: 1440px) {
+  .totalCost {
+    left: 47px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .totalCost {
+    left: 48px;
+    top: 700px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .totalCost {
+    left: 36px;
+    top: 664px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .totalCost {
+    width: 167px;
+    height: 41px;
+    left: 20px;
+    top: 536px;
+  }
+  .totalCost div {
+    font-size: 14px;
+  }
+}
 
 .monthlyPayment {
-  left: 486px;
   position: absolute;
   height: 81px;
-  top: 506px;
   width: 279px;
+  top: 506px;
 }
 .monthlyPayment div {
   font: 16px "Gilroy";
   color: #575757;
 }
 .monthlyPayment .total {
+  margin-top: 8px;
   width: 279px;
   height: 49px;
   display: flex;
   align-content: center;
+}
+@media screen and (min-width: 1440px) {
+  .monthlyPayment {
+    left: 486px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .monthlyPayment {
+    width: 229px;
+    left: 528px;
+    top: 700px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .monthlyPayment {
+    width: 229px;
+    left: 400px;
+    top: 664px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .monthlyPayment {
+    width: 158px;
+    height: 41px;
+    left: 20px;
+    top: 606px;
+  }
+  .monthlyPayment div {
+    font-size: 14px;
+  }
 }
 
 h1 {
@@ -151,17 +441,37 @@ h1 {
   line-height: 90%;
   color: #575757;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  h1 {
+    font-size: 22px;
+    color: #333333;
+  }
+}
 
 .lastSymbolTotal {
   margin-top: -5.5px;
 }
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .lastSymbolTotal {
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .lastSymbolTotal {
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .lastSymbolTotal {
+    margin-left: 5px;
+    margin-top: -2px;
+  }
+}
 
 .button {
   position: absolute;
-  width: 426px;
   height: 68px;
-  left: 925px;
-  top: 516px;
+  width: 426px;
   font: 30pt "Nekst";
   line-height: 36px;
   color: white;
@@ -177,4 +487,36 @@ h1 {
 }
 .button:disabled {
   background: #FF9514;
+}
+@media screen and (min-width: 1440px) {
+  .button {
+    max-width: 426px;
+    left: 925px;
+    top: 516px;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+  .button {
+    width: 345px;
+    left: 48px;
+    top: 825px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .button {
+    width: 345px;
+    left: 36px;
+    right: 387px;
+    top: 789px;
+    bottom: 156px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .button {
+    width: 280px;
+    height: 60px;
+    left: 20px;
+    top: 679px;
+    font-size: 22px;
+  }
 }/*# sourceMappingURL=App.css.map */

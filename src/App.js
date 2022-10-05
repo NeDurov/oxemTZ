@@ -24,14 +24,16 @@ function App() {
 		changeMonthlyPayment(carPrice, initialPayment, leaseTerm);
 		changeTotalCost(initialPayment, leaseTerm, monthlyPayment);
 		document.getElementById("carPrice").value = normalizeString(carPrice);
-		document.getElementById("initialPayment").value = Math.floor(
-			(initialPayment / 100) * carPrice
+		document.getElementById("initialPayment").value = normalizeString(
+			Math.floor((initialPayment / 100) * carPrice)
 		);
 		document.getElementById("procent").innerHTML = initialPayment + "%";
 		document.getElementById("leaseTerm").value = leaseTerm;
 
-		document.getElementById("monthlyPayment").innerHTML = monthlyPayment;
-		document.getElementById("totalCost").innerHTML = totalCost;
+		document.getElementById("monthlyPayment").innerHTML =
+			normalizeString(monthlyPayment);
+		document.getElementById("totalCost").innerHTML =
+			normalizeString(totalCost);
 
 		setUpdate(false);
 	}, [
@@ -60,7 +62,7 @@ function App() {
 	};
 
 	const changeInitialPaymentInput = (v) => {
-		let value = Number(v.target.value);
+		let value = normalizeNumber(v.target.value);
 		if (value !== (initialPayment / 100) * carPrice) {
 			setInitialPayment(value < 10 ? 10 : value > 60 ? 60 : value);
 			setUpdate(true);
@@ -115,22 +117,22 @@ function App() {
 	});
 
 	const sendData = (e) => {
-		// axios
-		// 	.post(
-		// 		"https://hookb.in/eK160jgYJ6UlaRPldJ1P",
-		// 		{
-		// 			car_coast: carPrice,
-		// 			initial_payment: (initialPayment / 100) * carPrice,
-		// 			initial_payment_percent: initialPayment,
-		// 			lease_term: leaseTerm,
-		// 			total_sum: totalCost,
-		// 			monthly_payment_from: monthlyPayment,
-		// 		},
-		// 		{ headers: { "Content-Type": "application/json" } }
-		// 	)
-		// 	.then((res) => {
-		// 		console.log(res.data);
-		// 	});
+		axios
+			.post(
+				"https://hookb.in/eK160jgYJ6UlaRPldJ1P",
+				{
+					car_coast: carPrice,
+					initial_payment: (initialPayment / 100) * carPrice,
+					initial_payment_percent: initialPayment,
+					lease_term: leaseTerm,
+					total_sum: totalCost,
+					monthly_payment_from: monthlyPayment,
+				},
+				{ headers: { "Content-Type": "application/json" } }
+			)
+			.then((res) => {
+				console.log(res.data);
+			});
 		e.preventDefault();
 		setLoading(true);
 		document.getElementById("carPrice").disabled = true;
@@ -149,6 +151,7 @@ function App() {
 			<div className="appHeader">
 				Рассчитайте стоимость автомобиля в лизинг
 			</div>
+
 			<label className="carPrice">
 				<div className="title">Стоимость автомобиля</div>
 				<input
@@ -174,7 +177,6 @@ function App() {
 					value={Math.floor((carPrice - 1000000) * 100) / 5000000}
 					onChange={changePrice}
 					sx={{
-						width: 390,
 						color: theme.palette.primary.main,
 						opacity: !loading ? 1 : 0.5,
 					}}
@@ -207,7 +209,6 @@ function App() {
 					value={Math.floor((initialPayment - 10) * 100) / 50}
 					onChange={changeInitialPayment}
 					sx={{
-						width: 390,
 						color: theme.palette.primary.main,
 						opacity: !loading ? 1 : 0.5,
 					}}
@@ -239,7 +240,6 @@ function App() {
 					value={Math.floor((leaseTerm - 1) * 100) / 59}
 					onChange={changeLeaseTerm}
 					sx={{
-						width: 390,
 						color: theme.palette.primary.main,
 						opacity: !loading ? 1 : 0.5,
 					}}
